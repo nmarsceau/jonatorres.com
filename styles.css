@@ -4,6 +4,7 @@
 2. Navigation Bar
 3. Banner Verse
 4. Forms
+5. Gallery
 
 */
 
@@ -230,8 +231,18 @@ nav.main-menu ul li a:active {
     height: 785px;
 }
 
+/******
+  5. Gallery
+******/
+.thumbnail {
+    cursor: pointer;
+    background: none;
+    border: none;
+}
 
-
+.thumbnail img {
+    width: 100%;
+}
 
 /*------------------------*/
 

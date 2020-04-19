@@ -52,26 +52,41 @@
         </noscript>
         <section class="row pt-4" id="thumbnail-container">
             <h1 class="col-12">Pictures</h1>
-            <div class="col-6 col-md-4 col-lg-3">
-                <!-- TODO: I was building out this thumbnail component -->
-                <img src="images/gallery/1.jpg" alt="" />
-            </div>
         </section>
     </main>
     <footer class="bg-dark text-light mt-5 pl-5 py-4">
         <a href="contact.html" class="text-white">Contact Us</a>
     </footer>
-
-    <div class="modal micromodal-slide" id="image-modal" aria-hidden="true">
+    <div id="image-modal" class="modal micromodal-slide" aria-hidden="true">
         <div class="modal__overlay" tabindex="-1" data-micromodal-close>
             <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="image-modal-title">
                 <header class="modal__header">
-                    <h2 class="modal__title" id="image-modal-title">Image Viewer</h2>
+                    <h2 class="hidden-visually" id="image-modal-title">Image Viewer</h2>
+                    <span>
+                        <button class="image-modal-nav previous" aria-label="previous image">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left-circle">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 8 8 12 12 16"></polyline>
+                                <line x1="16" y1="12" x2="8" y2="12"></line>
+                            </svg>
+                        </button>
+                        <button class="image-modal-nav next" aria-label="next image">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 16 16 12 12 8"></polyline>
+                                <line x1="8" y1="12" x2="16" y2="12"></line>
+                            </svg>
+                        </button>
+                    </span>
                     <button class="modal__close" aria-label="Close image viewer" data-micromodal-close></button>
                 </header>
-                <main class="modal__content" id="image-modal-content">
-                    <img src="" alt="" />
-                </main>
+                <div class="modal__content" id="image-modal-content">
+                    <picture>
+                        <source srcset="" type="image/webp" />
+                        <source srcset="" type="image/jp2" />
+                        <img src="" type="image/vnd.ms-photo" alt="" class="img-fluid" />
+                    </picture>
+                </div>
             </div>
         </div>
     </div>
@@ -79,148 +94,311 @@
         const pictures_config = {
             total: 137,
             alt: [
-                '1',
-                '2',
-                '3',
-                '4',
-                '5',
-                '6',
-                '7',
-                '8',
-                '9',
-                '10',
-                '11',
-                '12',
-                '13',
-                '14',
-                '15',
-                '16',
-                '17',
-                '18',
-                '19',
-                '20',
-                '21',
-                '22',
-                '23',
-                '24',
-                '25',
-                '26',
-                '27',
-                '28',
-                '29',
-                '30',
-                '31',
-                '32',
-                '33',
-                '34',
-                '35',
-                '36',
-                '37',
-                '38',
-                '39',
-                '40',
-                '41',
-                '42',
-                '43',
-                '44',
-                '45',
-                '46',
-                '47',
-                '48',
-                '49',
-                '50',
-                '51',
-                '52',
-                '53',
-                '54',
-                '55',
-                '56',
-                '57',
-                '58',
-                '59',
-                '60',
-                '61',
-                '62',
-                '63',
-                '64',
-                '65',
-                '66',
-                '67',
-                '68',
-                '69',
-                '70',
-                '71',
-                '72',
-                '73',
-                '74',
-                '75',
-                '76',
-                '77',
-                '78',
-                '79',
-                '80',
-                '81',
-                '82',
-                '83',
-                '84',
-                '85',
-                '86',
-                '87',
-                '88',
-                '89',
-                '90',
-                '91',
-                '92',
-                '93',
-                '94',
-                '95',
-                '96',
-                '97',
-                '98',
-                '99',
-                '100',
-                '101',
-                '102',
-                '103',
-                '104',
-                '105',
-                '106',
-                '107',
-                '108',
-                '109',
-                '110',
-                '111',
-                '112',
-                '113',
-                '114',
-                '115',
-                '116',
-                '117',
-                '118',
-                '119',
-                '120',
-                '121',
-                '122',
-                '123',
-                '124',
-                '125',
-                '126',
-                '127',
-                '128',
-                '129',
-                '130',
-                '131',
-                '132',
-                '133',
-                '134',
-                '135',
-                '136',
-                '137',
+                'Jona holding a baby in his lap.',
+                'Jona standing with his mom.',
+                'Jona standing with his brother.',
+                'Jona holding a baby in his lap.',
+                'Jona at his church.',
+                'Jona attends the Junior/Senior with Alyssa Vincent.',
+                'Jona plays the guitar.',
+                'Jona holding a baby at his church.',
+                'Jona giving his testimony at his church.',
+                'Jona and his brother at their cousin\'s fifth birthday.',
+                'Jona gets ready to throw a snowball.',
+                'Jona with Nichole Martinson.',
+                'Jona with a friend from school during Spirit Week.',
+                'Jona with a friend from school during Spirit Week.',
+                'Jona with Caroline Wilkins.',
+                'Jona and his brother with their cousin.',
+                'Jona holding a newborn baby.',
+                'Jona playing the guitar and singing with his dad and a friend.',
+                'Jona and a friend in costumes.',
+                'Jona with his family in an airport.',
+                'Jona, his brother, and their cousins posing together at an airport.',
+                'Jona with his brother, aunt, and grandmother in an airport.',
+                'Jona and his brother riding in a car.',
+                'Jona rides in a Volkswagen bus.',
+                'Jona and his brother ride a motorcycle with their friends.',
+                'Jona and his aunt wearing silly hats.',
+                'Jona and his brother and their cousins.',
+                'Jona and his brother and their cousins.',
+                'Jona wearing a red, white, and blue necklace.',
+                'Jona with his brother and cousins at the beach.',
+                'Jona holding a dog.',
+                'Jona in a grocery store.',
+                'Jona, his brother, and their cousins with their parents.',
+                'Jona and his family share their testimony.',
+                'Jona and his brother standing in front of a car.',
+                'Jona sitting on a metal barrel suspended between two trees.',
+                'Jona leaning against a wooden fence with his brother, Marcos.',
+                'Jona and his brother with their aunt.',
+                'Jona with two of his friends, Joey Vinson and Chris Vasquez.',
+                'Jona with Mrs. Richmond, a teacher at Bob Jones Academy.',
+                'Jona holding a newborn baby.',
+                'Jona with a friend.',
+                'Jona eating a lollipop with a friend at Bob Jones Academy.',
+                'Jona and his family in the hospital with a newborn baby.',
+                'Jona wearing sunglasses and playing the guitar.',
+                'Jona and his brother with a dog.',
+                'Jona and a friend sitting at a table in the quadrangle at Bob Jones Academy.',
+                'Jona and Victoria Balint, a classmate.',
+                'Jona and Will Willis.',
+                'Jona with a friend at her highschool graduation.',
+                'Jona with a friend in the hospital.',
+                'Jona wearing a blue shirt.',
+                'Jona and his brother at a restaurant.',
+                'Jona and his brother at a Christmas gathering.',
+                'Jona with his grandfather.',
+                'Jona with his grandfather.',
+                'Jona and his dad and cousin.',
+                'Jona holding a football with his grandparents.',
+                'Jona laying in a hospital bed.',
+                'Jona wearing a stocking cap.',
+                'Jona stands in front of Bob Jones Academy.',
+                'Jona and his brother with their cousin.',
+                'Jona sitting in the auditorium at his church.',
+                'Jona and his dad sitting in their church auditorium, laughing.',
+                'Jona and his brother with their cousin.',
+                'Jona with his cousin.',
+                'Jona and his brother with their dad.',
+                'Jona and his basketball team.',
+                'Jona and his brother holding soccer balls.',
+                'Jona\'s family and his aunt, uncle, and cousin.',
+                'Jona and his soccer team.',
+                'Jona dribbles the ball during a soccer game.',
+                'Jona dribbles the ball during a soccer game.',
+                'Jona dribbles the ball during a soccer game.',
+                'Jona, his brother, and their cousin with their grandmother.',
+                'Jona with his grandmother.',
+                'Jona and his brother and their little cousin at a park.',
+                'Jona and his family at a birthday party.',
+                'Jona and his brother with a cake.',
+                'Jona and his brother with two of Jona\'s friends, Chris Vasquez and Ben Rushing.',
+                'Jona with three of his friends, Brandon Sabota, Chris Vasquez, and Ben Rushing.',
+                'Jona dribbles the ball during a basketball game.',
+                'Jona amd his brother with their cousins.',
+                'Jona and his brother with their uncle and cousins.',
+                'Jona reading to his little cousin.',
+                'Jona singing during a school program.',
+                'During a capture the flag game at junior high Excursion, Jona is fought over in no-mans\' land.',
+                'Jona and his brother with their cousin.',
+                'Jona in the cockpit of an airplane.',
+                'Jona and his brother swimming together.',
+                'Jona gets baptized by his dad.',
+                'Jona smiling.',
+                'Jona with his baby cousin.',
+                'Jona and his brother with their baby cousin.',
+                'Jona with his friends during Spirit Week at Bob Jones Elementary School.',
+                'Jona with several of his friends on the recess field at school.',
+                'Jona with his friends Stephen Budd and Janice Clements at the Fifth Grade Frenzy.',
+                'Jona with his friends, Donavan Van Reijn, Nolan Dalby, and Zeier Fleming at the Fifth Grade Frenzy.',
+                'Jona, his brother, and their mom with Jona\'s baby cousin.',
+                'Jona and his dad smiling.',
+                'A family picture of Jona\'s extended family.',
+                'Jona and his brother with their grandmother.',
+                'Jona and his brother with their cousin.',
+                'Jona and his brother making silly faces.',
+                'Jona and his brother smiling.',
+                'Jona with his family following a graduation at Bob Jones University.',
+                'Jona poses with his uncle, both of them wearing sunglasses.',
+                'Jona with his brother on his fourth birthday.',
+                'Jona sitting next to his brother smiling.',
+                'Jona with his dad and brother at their church.',
+                'Jona smiles.',
+                'Jona and his brother laying on the kitchen floor.',
+                'Jona and his brother with their uncle.',
+                'Jona with his grandfather.',
+                'Jona and his brother pose with their mom.',
+                'Jona standing in line at a church gathering.',
+                'Jona smiling next to his brother.',
+                'Jona playing the piano.',
+                'Jona holds a latex glove balloon.',
+                'Jona and his brother pose in front of a Christmas tree.',
+                'Jona looks through a telescope.',
+                'Jona sitting on some stairs holding his brother.',
+                'Jona with his grandfather.',
+                'Jona with his grandparents and aunt.',
+                'Jona kisses his aunt\'s cheek at her wedding.',
+                'Jona holding his baby brother.',
+                'Jona\'s aunt holds him.',
+                'Jona holding his brother when he was born.',
+                'Jona sword-fights with some friends in the yard.',
+                'Jona sitting on the back of a semi truck.',
+                'Jona sitting in an office chair.',
+                'Jona snuggles with his mom.',
+                'Jona plays in the yard.',
+                'Jona stands by the Christmas tree.',
+                'Jona sits on the couch drinking from a cup.',
+                'Jona\'s grandfather holds him.',
+                'Jona\'s grandmother holds him.',
             ],
         };
     </script>
     <script src="main.js"></script>
     <script src="micromodal.min.js"></script>
-    <script>MicroModal.init();</script>
+    <script>
+        function load_image() {
+            const webp = image_modal.querySelector('source[type="image/webp"]');
+            webp.srcset = 'images/gallery/fullsize/webp/' + image_modal.image_number + '.webp';
+            const jp2 = image_modal.querySelector('source[type="image/jp2"]');
+            jp2.srcset = 'images/gallery/fullsize/jp2/' + image_modal.image_number + '.jp2';
+            const jxr = image_modal.querySelector('img');
+            jxr.src = 'images/gallery/fullsize/jxr/' + image_modal.image_number + '.jxr';
+            jxr.alt = pictures_config.alt[image_modal.image_number - 1];
+        }
+
+        function toggle_modal_nav_buttons() {
+            const previous = image_modal.querySelector('button.image-modal-nav.previous');
+            const next = image_modal.querySelector('button.image-modal-nav.next');
+            if (image_modal.image_number === 1) {
+                next.removeAttribute('disabled');
+                if (document.activeElement === previous) {next.focus();}
+                previous.setAttribute('disabled', 'disabled');
+            }
+            else if (image_modal.image_number === pictures_config.total) {
+                previous.removeAttribute('disabled');
+                if (document.activeElement === next) {previous.focus();}
+                next.setAttribute('disabled', 'disabled');
+            }
+            else {
+                previous.removeAttribute('disabled');
+                next.removeAttribute('disabled');
+            }
+        }
+
+        function previous_image() {
+            if (image_modal.image_number <= 1) {return;}
+            image_modal.image_number -= 1;
+            load_image();
+            toggle_modal_nav_buttons();
+        }
+
+        function next_image() {
+            if (image_modal.image_number >= pictures_config.total) {return;}
+            image_modal.image_number += 1;
+            load_image();
+            toggle_modal_nav_buttons();
+        }
+
+        const thumbnail_container = document.getElementById('thumbnail-container');
+        const image_modal = document.getElementById('image-modal');
+        image_modal.start_x = null;
+        image_modal.start_y = null;
+        image_modal.end_x = null;
+        image_modal.end_y = null;
+        image_modal.touch_moves = 0;
+        for (let i = 0; i < pictures_config.total; i++) {
+            const image_number = i + 1;
+            const thumbnail = document.createElement('picture');
+            const webp = document.createElement('source');
+            webp.srcset = 'images/gallery/thumbs/webp/' + image_number + '.webp';
+            webp.type = 'image/webp';
+            thumbnail.appendChild(webp);
+            const jp2 = document.createElement('source');
+            jp2.srcset = 'images/gallery/thumbs/jp2/' + image_number + '.jp2';
+            jp2.type = 'image/jp2';
+            thumbnail.appendChild(jp2);
+            const jxr = document.createElement('img');
+            jxr.src = 'images/gallery/thumbs/jxr/' + image_number + '.jxr';
+            jxr.type = 'image/vnd.ms-photo';
+            jxr.alt = pictures_config.alt[i];
+            jxr.loading = 'lazy';
+            jxr.classList.add('img-fluid');
+            jxr.width = 300;
+            jxr.height = 150;
+            jxr.style.width = 300;
+            jxr.style.height = 150;
+            thumbnail.appendChild(jxr);
+            const thumbnail_button = document.createElement('button');
+            thumbnail_button.classList.add('col-6');
+            thumbnail_button.classList.add('col-md-4');
+            thumbnail_button.classList.add('col-lg-3');
+            thumbnail_button.classList.add('p-2');
+            thumbnail_button.classList.add('thumbnail');
+            thumbnail_button.appendChild(thumbnail);
+            thumbnail_button.addEventListener('click', function(event) {
+                image_modal.image_number = image_number;
+                load_image();
+                toggle_modal_nav_buttons();
+                image_modal.querySelector('img').addEventListener('load', function() {
+                    setTimeout(function() {MicroModal.show('image-modal');}, 150);
+                }, {once: true});
+            })
+            thumbnail_container.appendChild(thumbnail_button);
+        }
+        image_modal.querySelector('button.image-modal-nav.previous').addEventListener('click', previous_image);
+        image_modal.querySelector('button.image-modal-nav.next').addEventListener('click', next_image);
+        image_modal.addEventListener('keydown', function(event) {
+            switch (event.keyCode) {
+                case 38:
+                case 40:
+                    event.preventDefault();
+                    break;
+                case 37:
+                    previous_image();
+                    break;
+                case 39:
+                    next_image();
+                    break;
+            }
+        });
+
+        function reset_start_coordinates() {
+            image_modal.start_x = null;
+            image_modal.start_y = null;
+        }
+
+        function reset_end_coordinates() {
+            image_modal.end_x = null;
+            image_modal.end_y = null;
+        }
+
+        function reset_touch_moves_count() {
+            image_modal.touch_moves = 0;
+        }
+
+        function reset_touch_events() {
+            reset_start_coordinates();
+            reset_end_coordinates();
+            reset_touch_moves_count();
+        }
+
+        image_modal.addEventListener('touchstart', function(event) {
+            if (event.touches.length) {
+                image_modal.start_x = event.touches[0].clientX;
+                image_modal.start_y = event.touches[0].clientY;
+                reset_end_coordinates();
+                reset_touch_moves_count();
+            }
+        });
+
+        image_modal.addEventListener('touchmove', function(event) {
+            event.preventDefault();
+            if (event.touches.length) {
+                image_modal.end_x = event.touches[0].clientX;
+                image_modal.end_y = event.touches[0].clientY;
+                image_modal.touch_moves += 1;
+            }
+        });
+
+        image_modal.addEventListener('touchend', function(event) {
+            if (
+                image_modal.start_x === null
+                || image_modal.start_y === null
+                || image_modal.end_x === null
+                || image_modal.end_y === null
+                || image_modal.touch_moves < 10
+            ) {
+                reset_touch_events();
+                return;
+            }
+            const x_diff = image_modal.start_x - image_modal.end_x;
+            const y_diff = image_modal.start_y - image_modal.end_y;
+            if (Math.abs(y_diff) > Math.abs(x_diff)) {reset_touch_events(); return;}
+            if (x_diff < 0 && image_modal.image_number > 1) {previous_image();}
+            else if (x_diff > 0 && image_modal.image_number < pictures_config.total) {next_image();}
+            reset_touch_events();
+        });
+    </script>
 </body>
 </html>
