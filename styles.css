@@ -24,6 +24,14 @@ main {
     min-height: 50vh;
 }
 
+a {
+    color: #0044dd;
+}
+
+a:hover {
+    color: #0000aa;
+}
+
 .hidden-visually {
     position: absolute !important;
     height: 1px; width: 1px;
@@ -49,6 +57,10 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+.no-wrap {
+    white-space: nowrap;
 }
 
 /******
@@ -201,25 +213,32 @@ nav.main-menu ul li a:active {
 @media screen and (min-width: 500px) {
     .banner-verse {
         width: 90%;
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (min-width: 650px) {
+    .banner-verse {
+        width: 583px;
         font-size: 1em;
     }
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 850px) {
     .banner-verse {
-        width: 70%;
+        width: 700px;
     }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1000px) {
     .banner-verse {
-        width: 60%;
+        width: 900px;
     }
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1300px) {
     .banner-verse {
-        width: 40%;
+        width: 1150px;
     }
 }
 
@@ -229,6 +248,16 @@ nav.main-menu ul li a:active {
 .memory-form {
     width: 100%;
     height: 785px;
+}
+
+.email-form {
+    width: 100%;
+    height: 950px; 
+}
+
+.tract-form {
+    width: 100%;
+    height: 1186px;
 }
 
 /******
@@ -243,10 +272,3 @@ nav.main-menu ul li a:active {
 .thumbnail img {
     width: 100%;
 }
-
-/*------------------------*/
-
-
-
-
-
