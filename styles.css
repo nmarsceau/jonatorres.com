@@ -5,6 +5,7 @@
 3. Banner Verse
 4. Forms
 5. Gallery
+6. Translation Links
 
 */
 
@@ -22,6 +23,16 @@ body > header {
 
 main {
     min-height: 50vh;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+@media screen and (min-width: 576px) {
+    h2 {
+        font-size: 2.1em;
+    }
 }
 
 a {
@@ -210,35 +221,28 @@ nav.main-menu ul li a:active {
     text-align: center;
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 576px) {
     .banner-verse {
         width: 90%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .banner-verse {
+        width: 92%;
         font-size: 0.9em;
     }
 }
 
-@media screen and (min-width: 650px) {
+@media screen and (min-width: 875px) {
     .banner-verse {
-        width: 583px;
-        font-size: 1em;
-    }
-}
-
-@media screen and (min-width: 850px) {
-    .banner-verse {
-        width: 700px;
+        width: 800px;
     }
 }
 
 @media screen and (min-width: 1000px) {
     .banner-verse {
-        width: 900px;
-    }
-}
-
-@media screen and (min-width: 1300px) {
-    .banner-verse {
-        width: 1150px;
+        width: 1010px;
     }
 }
 
@@ -271,4 +275,25 @@ nav.main-menu ul li a:active {
 
 .thumbnail img {
     width: 100%;
+}
+
+/******
+  6. Translation Links
+******/
+.translation-link {
+    font-size: 0.6em;
+    background-color: #000000;
+    color: white;
+    border-radius: 7px;
+    white-space: nowrap;
+}
+
+.translation-link:hover {
+    color: white;
+}
+
+@media screen and (min-width: 576px) {
+    .translation-link {
+        font-size: 0.75em;
+    }
 }
