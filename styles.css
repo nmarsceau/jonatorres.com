@@ -1,11 +1,12 @@
 /* TABLE OF CONTENTS
 
 1. Global
-2. Navigation Bar
-3. Banner Verse
-4. Forms
-5. Gallery
-6. Translation Links
+2. Header
+3. Navigation Bar
+4. Videos
+5. Forms
+6. Gallery
+7. Translation Links
 
 */
 
@@ -16,13 +17,8 @@ body {
     font-size: 1.2em;
 }
 
-body > header {
-    background-color: #000000;
-    color: #ffffff;
-}
-
 main {
-    min-height: 50vh;
+    min-height: 60vh;
 }
 
 h1 {
@@ -33,14 +29,6 @@ h1 {
     h2 {
         font-size: 2.1em;
     }
-}
-
-a {
-    color: #0044dd;
-}
-
-a:hover {
-    color: #0000aa;
 }
 
 .hidden-visually {
@@ -55,27 +43,59 @@ a:hover {
     display: none;
 }
 
-.video-container {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-bottom: 56.25%;
-}
-
-.video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
 .no-wrap {
     white-space: nowrap;
 }
 
+a {
+    color: #0044dd;
+}
+
+a:hover {
+    color: #0000aa;
+}
+
 /******
-  2. Navigation Bar
+  2. Header
+******/
+body > header {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+@media screen and (min-width: 1200px) {
+    body > header {
+        height: 345px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    body > header img {
+        position: absolute;
+        bottom: 0;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    body > header {
+        height: 400px;
+    }
+}
+
+@media screen and (min-width: 1850px) {
+    body > header {
+        height: 450px;
+    }
+}
+
+@media screen and (min-width: 2300px) {
+    body > header {
+        height: 500px;
+    }
+}
+
+/******
+  3. Navigation Bar
 ******/
 nav.main-menu {
     position: sticky;
@@ -212,42 +232,25 @@ nav.main-menu ul li a:active {
 }
 
 /******
-  3. Banner Verse
+  4. Videos
 ******/
-.banner-verse {
-    font-size: 0.7em;
-    width: 96%;
-    font-style: oblique;
-    text-align: center;
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
 }
 
-@media screen and (min-width: 576px) {
-    .banner-verse {
-        width: 90%;
-    }
-}
-
-@media screen and (min-width: 768px) {
-    .banner-verse {
-        width: 92%;
-        font-size: 0.9em;
-    }
-}
-
-@media screen and (min-width: 875px) {
-    .banner-verse {
-        width: 800px;
-    }
-}
-
-@media screen and (min-width: 1000px) {
-    .banner-verse {
-        width: 1010px;
-    }
+.video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 /******
-  4. Forms
+  5. Forms
 ******/
 .memory-form {
     width: 100%;
@@ -265,7 +268,7 @@ nav.main-menu ul li a:active {
 }
 
 /******
-  5. Gallery
+  6. Gallery
 ******/
 .thumbnail {
     cursor: pointer;
@@ -278,7 +281,7 @@ nav.main-menu ul li a:active {
 }
 
 /******
-  6. Translation Links
+  7. Translation Links
 ******/
 .translation-link {
     font-size: 0.6em;
@@ -292,7 +295,7 @@ nav.main-menu ul li a:active {
     color: white;
 }
 
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 768px) {
     .translation-link {
         font-size: 0.75em;
     }
