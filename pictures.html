@@ -328,7 +328,9 @@
                 load_image();
                 toggle_modal_nav_buttons();
                 image_modal.querySelector('img').addEventListener('load', function() {
-                    setTimeout(function() {MicroModal.show('image-modal');}, 150);
+                    setTimeout(function() {
+                        MicroModal.show('image-modal', {awaitCloseAnimation: true});
+                    }, 150);
                 }, {once: true});
             })
             thumbnail_container.appendChild(thumbnail_button);
