@@ -7,6 +7,7 @@
 5. Forms
 6. Gallery
 7. Translation Links
+8. God's Story Heading Hack
 
 */
 
@@ -23,6 +24,10 @@ main {
 
 h1 {
     font-size: 2.5em;
+}
+
+h2 {
+    font-weight: 400;
 }
 
 @media screen and (min-width: 576px) {
@@ -298,5 +303,18 @@ nav.main-menu ul li a:active {
 @media screen and (min-width: 768px) {
     .translation-link {
         font-size: 0.75em;
+    }
+}
+
+/******
+  8. God's Story Heading Hack
+******/
+.gods_story_heading_hack {
+    display: block;
+}
+
+@media screen and (min-width: 480px) {
+    .gods_story_heading_hack {
+        display: none;
     }
 }
