@@ -2,7 +2,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/fe6aa02d-20a3-4035-83a9-c0364d51cfb0/deploy-status)](https://app.netlify.com/sites/jonatorres/deploys)
 
-This code is for the website at [jonatorres.com].
+This is the codebase for [jonatorres.com].
 
 ![A desktop-size screenshot of the website.][desktop 1]
 
