@@ -7,5 +7,5 @@ This is the codebase for [jonatorres.com].
 ![A desktop-size screenshot of the website.][desktop 1]
 
 
-[jonatorres.com]: https://jonatorres.netlify.app
+[jonatorres.com]: https://www.jonatorres.com
 [desktop 1]: https://github.com/nmarsceau/jonatorres.com/blob/wiki_images/wiki_images/desktop%201.png
