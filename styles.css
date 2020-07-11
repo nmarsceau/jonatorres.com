@@ -173,7 +173,7 @@ nav.main-menu ul li a:active {
   
 @media screen and (min-width: 875px) {
     nav.main-menu a.brand {
-        width: 17em
+        width: 17em;
     }
   
     nav.main-menu {
