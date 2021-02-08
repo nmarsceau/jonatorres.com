@@ -14,7 +14,12 @@
 </head>
 <body>
     <nav class="main-menu shadow">
-        <a class="brand ml-3" href="index.html"><img src="images/brand.png" alt="" class="w-100" /></a>
+        <a class="brand ml-3" href="index.html">
+            <picture>
+                <source srcset="images/brand.webp" type="image/webp" />
+                <img src="images/brand.png" type="image/png" alt="" class="w-100" />
+            </picture>
+        </a>
         <button id="main-menu-toggle" type="button" aria-label="Toggle main menu"></button>
         <ul class="collapsed">
             <li><a href="humor.html">Jona's Humor</a></li>
@@ -26,17 +31,17 @@
     </nav>
     <header>
         <picture>
-            <source type="image/webp" media="(max-width: 576px)" srcset="images/banner/webp/xs.webp" />
-            <source type="image/webp" media="(max-width: 768px)" srcset="images/banner/webp/sm.webp" />
-            <source type="image/webp" media="(max-width: 992px)" srcset="images/banner/webp/md.webp" />
-            <source type="image/webp" media="(max-width: 1200px)" srcset="images/banner/webp/lg.webp" />
-            <source type="image/webp" media="(min-width: 1200px)" srcset="images/banner/webp/xl.webp" />
-            <source type="image/jpeg" media="(max-width: 576px)" srcset="images/banner/jpg/xs.jpg" />
-            <source type="image/jpeg" media="(max-width: 768px)" srcset="images/banner/jpg/sm.jpg" />
-            <source type="image/jpeg" media="(max-width: 992px)" srcset="images/banner/jpg/md.jpg" />
-            <source type="image/jpeg" media="(max-width: 1200px)" srcset="images/banner/jpg/lg.jpg" />
-            <source type="image/jpeg" media="(min-width: 1200px)" srcset="images/banner/jpg/xl.jpg" />
-            <img type="image/vnd.ms-photo" src="images/banner/jxr/xl.jxr" alt="" class="w-100" />
+            <source type="image/webp" media="(max-width: 576px)" srcset="images/banner/xs.webp" />
+            <source type="image/webp" media="(max-width: 768px)" srcset="images/banner/sm.webp" />
+            <source type="image/webp" media="(max-width: 992px)" srcset="images/banner/md.webp" />
+            <source type="image/webp" media="(max-width: 1200px)" srcset="images/banner/lg.webp" />
+            <source type="image/webp" media="(min-width: 1200px)" srcset="images/banner/xl.webp" />
+            <source type="image/jpeg" media="(max-width: 576px)" srcset="images/banner/xs.jpg" />
+            <source type="image/jpeg" media="(max-width: 768px)" srcset="images/banner/sm.jpg" />
+            <source type="image/jpeg" media="(max-width: 992px)" srcset="images/banner/md.jpg" />
+            <source type="image/jpeg" media="(max-width: 1200px)" srcset="images/banner/lg.jpg" />
+            <source type="image/jpeg" media="(min-width: 1200px)" srcset="images/banner/xl.jpg" />
+            <img type="image/jpeg" src="images/banner/lg.jpg" alt="" class="w-100" />
         </picture>
     </header>
     <main class="container pt-4">
