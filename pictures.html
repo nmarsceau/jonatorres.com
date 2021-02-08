@@ -12,10 +12,16 @@
     <link href="styles.css" rel="stylesheet" type="text/css" />
     <link href="micromodal.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="preload" href="images/loader.svg" as="image" />
 </head>
 <body>
     <nav class="main-menu shadow">
-        <a class="brand ml-3" href="index.html"><img src="images/brand.png" alt="" class="w-100" /></a>
+        <a class="brand ml-3" href="index.html">
+            <picture>
+                <source srcset="images/brand.webp" type="image/webp" />
+                <img src="images/brand.png" type="image/png" alt="" class="w-100" />
+            </picture>
+        </a>
         <button id="main-menu-toggle" type="button" aria-label="Toggle main menu"></button>
         <ul class="collapsed">
             <li><a href="humor.html">Jona's Humor</a></li>
@@ -27,17 +33,17 @@
     </nav>
     <header>
         <picture>
-            <source type="image/webp" media="(max-width: 576px)" srcset="images/banner/webp/xs.webp" />
-            <source type="image/webp" media="(max-width: 768px)" srcset="images/banner/webp/sm.webp" />
-            <source type="image/webp" media="(max-width: 992px)" srcset="images/banner/webp/md.webp" />
-            <source type="image/webp" media="(max-width: 1200px)" srcset="images/banner/webp/lg.webp" />
-            <source type="image/webp" media="(min-width: 1200px)" srcset="images/banner/webp/xl.webp" />
-            <source type="image/jpeg" media="(max-width: 576px)" srcset="images/banner/jpg/xs.jpg" />
-            <source type="image/jpeg" media="(max-width: 768px)" srcset="images/banner/jpg/sm.jpg" />
-            <source type="image/jpeg" media="(max-width: 992px)" srcset="images/banner/jpg/md.jpg" />
-            <source type="image/jpeg" media="(max-width: 1200px)" srcset="images/banner/jpg/lg.jpg" />
-            <source type="image/jpeg" media="(min-width: 1200px)" srcset="images/banner/jpg/xl.jpg" />
-            <img type="image/vnd.ms-photo" src="images/banner/jxr/xl.jxr" alt="" class="w-100" />
+            <source type="image/webp" media="(max-width: 576px)" srcset="images/banner/xs.webp" />
+            <source type="image/webp" media="(max-width: 768px)" srcset="images/banner/sm.webp" />
+            <source type="image/webp" media="(max-width: 992px)" srcset="images/banner/md.webp" />
+            <source type="image/webp" media="(max-width: 1200px)" srcset="images/banner/lg.webp" />
+            <source type="image/webp" media="(min-width: 1200px)" srcset="images/banner/xl.webp" />
+            <source type="image/jpeg" media="(max-width: 576px)" srcset="images/banner/xs.jpg" />
+            <source type="image/jpeg" media="(max-width: 768px)" srcset="images/banner/sm.jpg" />
+            <source type="image/jpeg" media="(max-width: 992px)" srcset="images/banner/md.jpg" />
+            <source type="image/jpeg" media="(max-width: 1200px)" srcset="images/banner/lg.jpg" />
+            <source type="image/jpeg" media="(min-width: 1200px)" srcset="images/banner/xl.jpg" />
+            <img type="image/jpeg" src="images/banner/lg.jpg" alt="" class="w-100" />
         </picture>
     </header>
     <main class="container pt-4">
@@ -90,17 +96,12 @@
                     </span>
                     <button class="modal__close" aria-label="Close image viewer" data-micromodal-close></button>
                 </header>
-                <div class="modal__content">
-                    <picture>
-                        <source srcset="" type="image/webp" />
-                        <source srcset="" type="image/jp2" />
-                        <img src="" type="image/vnd.ms-photo" alt="" class="img-fluid" />
-                    </picture>
-                </div>
+                <div class="modal__content"></div>
             </div>
         </div>
     </div>
     <script>
+        const preloaded_images = {};
         const pictures_config = {
             total: 137,
             alt: [
@@ -248,13 +249,29 @@
     <script src="micromodal.min.js"></script>
     <script>
         function load_image() {
-            const webp = image_modal.querySelector('source[type="image/webp"]');
-            webp.srcset = 'images/gallery/fullsize/webp/' + image_modal.image_number + '.webp';
-            const jp2 = image_modal.querySelector('source[type="image/jp2"]');
-            jp2.srcset = 'images/gallery/fullsize/jp2/' + image_modal.image_number + '.jp2';
-            const jxr = image_modal.querySelector('img');
-            jxr.src = 'images/gallery/fullsize/jxr/' + image_modal.image_number + '.jxr';
-            jxr.alt = pictures_config.alt[image_modal.image_number - 1];
+            const image_modal_content = image_modal.querySelector('.modal__content');
+            image_modal_content.innerHTML = '';
+            image_modal_content.appendChild(build_image_element(image_modal.image_number));
+            if (image_modal.image_number > 1) {build_image_element(image_modal.image_number - 1);}
+            if (image_modal.image_number < pictures_config.total) {build_image_element(image_modal.image_number + 1);}
+        }
+
+        function build_image_element(image_number) {
+            if (!preloaded_images.hasOwnProperty(image_number)) {
+                const picture = document.createElement('picture');
+                const webp = document.createElement('source');
+                webp.type = 'image/webp';
+                webp.srcset = 'images/gallery/fullsize/' + image_number + '.webp';
+                picture.appendChild(webp);
+                const image = document.createElement('img');
+                image.type = 'image/jpeg';
+                image.classList.add('img-fluid');
+                image.src = 'images/gallery/fullsize/' + image_number + '.jpg';
+                image.alt = pictures_config.alt[image_number - 1];
+                picture.appendChild(image);
+                preloaded_images[image_number] = picture;
+            }
+            return preloaded_images[image_number];
         }
 
         function toggle_modal_nav_buttons() {
@@ -301,24 +318,20 @@
             const image_number = i + 1;
             const thumbnail = document.createElement('picture');
             const webp = document.createElement('source');
-            webp.srcset = 'images/gallery/thumbs/webp/' + image_number + '.webp';
+            webp.srcset = 'images/gallery/thumbs/' + image_number + '.webp';
             webp.type = 'image/webp';
             thumbnail.appendChild(webp);
-            const jp2 = document.createElement('source');
-            jp2.srcset = 'images/gallery/thumbs/jp2/' + image_number + '.jp2';
-            jp2.type = 'image/jp2';
-            thumbnail.appendChild(jp2);
-            const jxr = document.createElement('img');
-            jxr.src = 'images/gallery/thumbs/jxr/' + image_number + '.jxr';
-            jxr.type = 'image/vnd.ms-photo';
-            jxr.alt = pictures_config.alt[i];
-            jxr.loading = 'lazy';
-            jxr.classList.add('img-fluid');
-            jxr.width = 300;
-            jxr.height = 150;
-            jxr.style.width = 300;
-            jxr.style.height = 150;
-            thumbnail.appendChild(jxr);
+            const image = document.createElement('img');
+            image.src = 'images/gallery/thumbs/' + image_number + '.jpg';
+            image.type = 'image/jpeg';
+            image.alt = pictures_config.alt[i];
+            image.loading = 'lazy';
+            image.classList.add('img-fluid');
+            image.width = 300;
+            image.height = 150;
+            image.style.width = 300;
+            image.style.height = 150;
+            thumbnail.appendChild(image);
             const thumbnail_button = document.createElement('button');
             thumbnail_button.classList.add('col-6');
             thumbnail_button.classList.add('col-md-4');
@@ -330,11 +343,7 @@
                 image_modal.image_number = image_number;
                 load_image();
                 toggle_modal_nav_buttons();
-                image_modal.querySelector('img').addEventListener('load', function() {
-                    setTimeout(function() {
-                        MicroModal.show('image-modal', {awaitCloseAnimation: true});
-                    }, 150);
-                }, {once: true});
+                MicroModal.show('image-modal', {awaitCloseAnimation: true});
             })
             thumbnail_container.appendChild(thumbnail_button);
         }
