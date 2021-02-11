@@ -27,7 +27,7 @@
     overflow-y: auto;
     box-sizing: border-box;
     position: relative;
-    top: 1em;
+    top: 3em;
 }
 
 @media screen and (min-width: 500px) {
