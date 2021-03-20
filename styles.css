@@ -257,19 +257,29 @@ nav.main-menu ul li a:active {
 /******
   5. Forms
 ******/
-.memory-form {
-    width: 100%;
-    height: 785px;
+span.required {
+  color: #ae1313;
+  font-size: 0.8em;
+  margin-left: 8px;
+  vertical-align: bottom;
 }
 
-.email-form {
-    width: 100%;
-    height: 950px; 
+span.optional {
+  color: #4040ce;
+  font-size: 0.8em;
+  margin-left: 8px;
+  vertical-align: bottom;
 }
 
-.tract-form {
-    width: 100%;
-    height: 1186px;
+.error {
+  border: 1px solid #ae1313;
+}
+
+.error-message {
+  color: #ae1313;
+  font-size: 0.8em;
+  font-style: italic;
+  margin-left: 10px;
 }
 
 /******

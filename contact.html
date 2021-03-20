@@ -52,11 +52,102 @@
         </noscript>
         <section class="row pt-4">
             <h1 class="col-12">Contact Us</h1>
-            <section class="col-md-6">
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe64EgO6cT2926ho5SsmWNZKeYXtJ1fyDFtk5aIsmfk8X1mTw/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0" class="email-form">Loading…</iframe>
+            <section class="col-md-5 mt-5">
+                <h2>Email Us</h2>
+                <p>
+                    <small>
+                        If there is any way we can be of help to you, or if you have any questions or concerns regarding the tract
+                        or this website, please feel free to let us know by completing this form.
+                    </small>
+                </p>
+                <form class="validate" name="email" method="post" netlify>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label class="d-block">
+                                Your Name<span class="required">required</span>
+                                <input type="text" name="name" class="form-control form-control-lg"
+                                    required maxlength="250">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label class="d-block">
+                                Your Email Address<span class="optional">optional</span>
+                                <input type="email" name="email" class="form-control form-control-lg"
+                                    required maxlength="320">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label class="d-block">Your Message<span class="required">required</span></label>
+                            <textarea name="message" rows="6" class="form-control form-control-lg count" maxlength="2500" required></textarea>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col">
+                            <button type="submit" class="btn btn-lg btn-success px-5">Send</button>
+                        </div>
+                    </div>
+                </form>
             </section>
-            <section class="col-md-6">
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScbBXKuspZUgB2p6U1VoIkYXGAElibn3ghRObSHNMSz7L2UDA/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0" class="tract-form">Loading…</iframe>
+            <section class="col-md-5 offset-md-2 mt-5">
+                <h2>Order Tracts</h2>
+                <form class="validate" name="order" method="post" netlify>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label class="d-block">
+                                Your Name<span class="required">required</span>
+                                <input type="text" name="name" class="form-control form-control-lg"
+                                    required maxlength="250">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label class="d-block">
+                                Your Email Address<span class="required">required</span>
+                                <input type="email" name="email" class="form-control form-control-lg"
+                                    required maxlength="320">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label class="d-block">Tract Language<span class="required">required</span></label>
+                            <label class="form-check form-check-inline">
+                                <input type="radio" name="language" value="english" class="form-check-input" required>
+                                <small class="form-check-label">English</small>
+                            </label>
+                            <label class="form-check form-check-inline">
+                                <input type="radio" name="language" value="espanol" class="form-check-input" required>
+                                <small class="form-check-label">Español</small>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label class="d-block">
+                                Quantity<span class="required">required</span>
+                                <p class="ml-2"><small><em>50 tracts are $3.50, 100 tracts are $7.00.<br>Payment will be arranged after your order is received.</em></small></p>
+                                <input type="number" name="quantity" class="form-control form-control-lg"
+                                    required min="0" step="50">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label class="d-block">Shipping Address<span class="required">required</span></label>
+                            <textarea name="address" rows="2" class="form-control form-control-lg count" maxlength="500" required></textarea>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <button type="submit" class="btn btn-lg btn-success px-5">Submit</button>
+                        </div>
+                    </div>
+                </form>
             </section>
         </section>
     </main>
@@ -78,5 +169,7 @@
         </div>
     </footer>
     <script src="main.js"></script>
+    <script src="validate_form.js"></script>
+    <script src="character_counter.js"></script>
 </body>
 </html>

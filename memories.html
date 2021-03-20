@@ -61,7 +61,34 @@
                 <hr>
             </section>
             <section class="col-md-7 col-lg-6 col-xl-5">
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe_yquu_NAl9C5SV9TA7tLNFsIMzIi4e1tDqmDboEVlE12fVQ/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0" class="memory-form">Loading…</iframe>
+                <h2>Share a Memory</h2>
+                <p>
+                    <small>
+                        Please submit your memory below. It will be reviewed and posted as soon as possible.
+                    </small>
+                </p>
+                <form class="validate" name="memory" method="post" netlify>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label class="d-block">
+                                Your Name<span class="required">required</span>
+                                <input type="text" name="name" class="form-control form-control-lg"
+                                    required maxlength="250">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label class="d-block">Your Memory<span class="required">required</span></label>
+                            <textarea name="memory" rows="6" class="form-control form-control-lg count" maxlength="3000" required></textarea>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <button type="submit" class="btn btn-lg btn-success px-5">Share</button>
+                        </div>
+                    </div>
+                </form>
             </section>
         </section>
     </main>
@@ -83,5 +110,7 @@
         </div>
     </footer>
     <script src="main.js"></script>
+    <script src="validate_form.js"></script>
+    <script src="character_counter.js"></script>
 </body>
 </html>
