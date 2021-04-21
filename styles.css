@@ -8,6 +8,7 @@
 6. Gallery
 7. Translation Links
 8. God's Story Heading Hack
+9. Skip to Main Content
 
 */
 
@@ -333,4 +334,31 @@ span.optional {
     .gods_story_heading_hack {
         display: none;
     }
+}
+
+/******
+  9. Skip to Main Content
+******/
+#main-content {
+  position: relative;
+  top: -4.5em;
+}
+
+a[href="#main-content"] {
+  z-index: 999;
+  position: fixed;
+  top: -100px;
+  padding: 0.5em 1em 0.75em;
+  left: 30px;
+  border-radius: 0px 0px 10px 10px;
+  box-shadow: 0px -3px 20px -2px #000;
+  background-color: #fff;
+  color: #000;
+  border: 3px solid #000;
+}
+
+a[href="#main-content"]:focus, a[href="#main-content"]:active {
+  top: -3px;
+  text-decoration: underline;
+  outline: none;
 }
