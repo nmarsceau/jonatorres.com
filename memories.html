@@ -45,16 +45,16 @@
             <img type="image/jpeg" src="images/banner/lg.jpg" alt="" class="w-100" />
         </picture>
     </header>
-    <main class="container pt-4">
+    <main>
         <noscript>
             <div class="alert alert-warning text-center" role="alert">
                 It looks like JavaScript is disabled in your browser. This website may not work properly until JavaScript is enabled.
             </div>
         </noscript>
-        <section class="row pt-4">
-            <h1 class="col-12">Memories</h1>
-            <section class="col-md-5 col-lg-6 col-xl-7 pt-5">
-                <span id="main-content" tabindex="-1"></span>
+        <span id="main-content" tabindex="-1"></span>
+        <h1>Memories</h1>
+        <div class="memories-layout">
+            <section class="memories-list">
                 <blockquote>
                     <p>los torres dejan profundas huellas de Dios</p>
                     <p>Amados!!! es grandioso ver la mano cariñosa de Dios, cuantas cosas mas, hara el buen Dios atraves del testimonio de Jona. Les amamos!!!!</p>
@@ -62,7 +62,7 @@
                 </blockquote>
                 <hr>
             </section>
-            <section class="col-md-7 col-lg-6 col-xl-5">
+            <section class="memory-form">
                 <h2>Share a Memory</h2>
                 <p>
                     <small>
@@ -70,29 +70,14 @@
                     </small>
                 </p>
                 <form class="validate" name="memory" method="post" netlify>
-                    <div class="row mb-3">
-                        <div class="col">
-                            <label class="d-block">
-                                Your Name<span class="required">required</span>
-                                <input type="text" name="name" class="form-control form-control-lg"
-                                    required maxlength="250">
-                            </label>
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col">
-                            <label class="d-block">Your Memory<span class="required">required</span></label>
-                            <textarea name="memory" rows="6" class="form-control form-control-lg count" maxlength="3000" required></textarea>
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col">
-                            <button type="submit" class="btn btn-lg btn-success px-5">Share</button>
-                        </div>
-                    </div>
+                    <label for="memory-name">Your Name<span class="required">required</span></label>
+                    <input type="text" id="memory-name" name="name" required maxlength="250">
+                    <label for="memory-memory">Your Memory<span class="required">required</span></label>
+                    <textarea id="memory-memory" name="memory" class="count" rows="6" maxlength="3000" required></textarea>
+                    <button type="submit" class="button button-success">Share</button>
                 </form>
             </section>
-        </section>
+        </div>
     </main>
     <footer>
         <div class="footer-layout">
