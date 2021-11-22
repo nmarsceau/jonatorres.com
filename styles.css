@@ -287,11 +287,30 @@ nav.main-menu ul li a:active {
   5. Forms
 ******/
 form input[type="text"],
+form input[type="email"],
+form input[type="number"],
 form textarea {
     width: 100%;
     padding: 0.5em 0.75em;
     border-radius: 5px;
     border: 1px solid darkgray;
+}
+
+form textarea {
+    margin-block-end: -0.4em;
+}
+
+.radio-container.inline input[type="radio"]:not(:first-of-type) {
+    margin-inline-start: 0.5em;
+}
+
+form label {
+    margin-block-end: 0;
+}
+
+form label:not(:first-of-type):not(.radio-container label),
+form button {
+    margin-block-start: 0.75em;
 }
 
 span.required {
@@ -497,19 +516,6 @@ body > footer a:focus {
     padding-block-start: 2em;
 }
 
-.memory-form label {
-    margin-block-end: 0;
-}
-
-.memory-form label:not(:first-of-type),
-.memory-form button {
-    margin-block-start: 0.75em;
-}
-
-.memory-form textarea {
-    margin-block-end: -0.4em;
-}
-
 @media screen and (min-width: 750px) {
     .memories-layout {
         display: flex;
@@ -523,5 +529,40 @@ body > footer a:focus {
 
     .memory-form {
         flex: 1 0 300px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+.email-form,
+.order-form {
+    margin-top: 3em;
+}
+
+.quantity-description {
+    margin-inline-start: 0.5em;
+    margin-block: -0.25em 0;
+}
+
+@media screen and (min-width: 850px) {
+    .contact-layout {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .email-form {
+        flex: 0 1 45%;
+    }
+
+    .order-form {
+        flex: 0 1 45%;
     }
 }

@@ -45,16 +45,16 @@
             <img type="image/jpeg" src="images/banner/lg.jpg" alt="" class="w-100" />
         </picture>
     </header>
-    <main class="container pt-4">
+    <main>
         <noscript>
         <div class="alert alert-warning text-center" role="alert">
             It looks like JavaScript is disabled in your browser. This website may not work properly until JavaScript is enabled.
         </div>
         </noscript>
-        <section class="row pt-4">
-            <h1 class="col-12">Contact Us</h1>
-            <section class="col-md-5 mt-5">
-                <span id="main-content" tabindex="-1"></span>
+        <h1>Contact Us</h1>
+        <span id="main-content" tabindex="-1"></span>
+        <div class="contact-layout">
+            <section class="email-form">
                 <h2>Email Us</h2>
                 <p>
                     <small>
@@ -63,97 +63,38 @@
                     </small>
                 </p>
                 <form class="validate" name="email" method="post" netlify>
-                    <div class="row mb-3">
-                        <div class="col">
-                            <label class="d-block">
-                                Your Name<span class="required">required</span>
-                                <input type="text" name="name" class="form-control form-control-lg"
-                                    required maxlength="250">
-                            </label>
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col">
-                            <label class="d-block">
-                                Your Email Address<span class="optional">optional</span>
-                                <input type="email" name="email" class="form-control form-control-lg"
-                                    maxlength="320">
-                            </label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <label class="d-block">
-                              Your Message<span class="required">required</span>
-                              <textarea name="message" rows="6" class="form-control form-control-lg count" maxlength="2500" required></textarea>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="row mt-4">
-                        <div class="col">
-                            <button type="submit" class="btn btn-lg btn-success px-5">Send</button>
-                        </div>
-                    </div>
+                    <label for="email-name">Your Name<span class="required">required</span></label>
+                    <input type="text" id="email-name" name="name" required maxlength="250">
+                    <label for="email-email">Your Email Address<span class="optional">optional</span></label>
+                    <input type="email" id="email-email" name="email" maxlength="320">
+                    <label for="email-message">Your Message<span class="required">required</span></label>
+                    <textarea id="email-message" name="message" class="count" rows="6" maxlength="2500" required></textarea>
+                    <button type="submit" class="button button-success">Send</button>
                 </form>
             </section>
-            <section class="col-md-5 offset-md-2 mt-5">
+            <section class="order-form">
                 <h2>Order Tracts</h2>
                 <form class="validate" name="order" method="post" netlify>
-                    <div class="row mb-3">
-                        <div class="col">
-                            <label class="d-block">
-                                Your Name<span class="required">required</span>
-                                <input type="text" name="name" class="form-control form-control-lg"
-                                    required maxlength="250">
-                            </label>
-                        </div>
+                    <label for="order-name">Your Name<span class="required">required</span></label>
+                    <input type="text" id="order-name" name="name" required maxlength="250">
+                    <label for="order-email">Your Email Address<span class="required">required</span></label>
+                    <input type="email" id="order-email" name="email" required maxlength="320">
+                    <label>Tract Language<span class="required">required</span></label>
+                    <div class="radio-container inline">
+                        <input type="radio" id="order-language-english" name="language" value="English" required>
+                        <label for="order-language-english"><small>English</small></label>
+                        <input type="radio" id="order-language-espanol" name="language" value="Español" required>
+                        <label for="order-language-espanol"><small>Español</small></label>
                     </div>
-                    <div class="row mb-3">
-                        <div class="col">
-                            <label class="d-block">
-                                Your Email Address<span class="required">required</span>
-                                <input type="email" name="email" class="form-control form-control-lg"
-                                    required maxlength="320">
-                            </label>
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col">
-                            <label class="d-block">Tract Language<span class="required">required</span></label>
-                            <label class="form-check form-check-inline">
-                                <input type="radio" name="language" value="English" class="form-check-input" required>
-                                <small class="form-check-label">English</small>
-                            </label>
-                            <label class="form-check form-check-inline">
-                                <input type="radio" name="language" value="Español" class="form-check-input" required>
-                                <small class="form-check-label">Español</small>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col">
-                            <label class="d-block">
-                                Quantity<span class="required">required</span>
-                                <p class="ml-2"><small><em>50 tracts are $3.50, 100 tracts are $7.00.<br>Payment will be arranged after your order is received.</em></small></p>
-                                <input type="number" name="quantity" class="form-control form-control-lg"
-                                    required min="0" step="50">
-                            </label>
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col">
-                            <label class="d-block">Shipping Address<span class="required">required</span></label>
-                            <textarea name="address" rows="2" class="form-control form-control-lg count" maxlength="500" required></textarea>
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col">
-                            <button type="submit" class="btn btn-lg btn-success px-5">Submit</button>
-                        </div>
-                    </div>
+                    <label for="order-quantity">Quantity<span class="required">required</span></label>
+                    <p class="quantity-description"><small><em>50 tracts are $3.50, 100 tracts are $7.00.<br>Payment will be arranged after your order is received.</em></small></p>
+                    <input type="number" id="order-quantity" name="quantity" required min="0" step="50">
+                    <label for="order-address">Shipping Address<span class="required">required</span></label>
+                    <textarea id="order-address" name="address" rows="2" class="count" maxlength="500" required></textarea>
+                    <button type="submit" class="button button-success">Submit</button>
                 </form>
             </section>
-        </section>
+        </div>
     </main>
     <footer>
         <div class="footer-layout">
