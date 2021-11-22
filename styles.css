@@ -21,6 +21,10 @@ body {
 
 main {
     min-height: 60vh;
+    max-width: 55em;
+    margin-inline: auto;
+    margin-block-start: 2em;
+    padding-inline: 2em;
 }
 
 h1 {
@@ -423,5 +427,32 @@ body > footer a:focus {
         flex: 1 0 20%;
         margin-block-start: 0;
         text-align: right;
+    }
+}
+
+
+
+
+
+
+.songs-layout article {
+    flex: 0 0 auto;
+    margin-block-start: 3em;
+}
+
+@media screen and (min-width: 550px) {
+    .songs-layout article {
+        margin-inline-start: 2em;
+    }
+}
+
+@media screen and (min-width: 990px) {
+    .songs-layout {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .songs-layout article {
+        margin-inline-start: 0;
     }
 }
