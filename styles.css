@@ -61,6 +61,11 @@ a:hover {
     color: #0000aa;
 }
 
+blockquote cite {
+    display: block;
+    text-align: right;
+}
+
 /******
   2. Header
 ******/
@@ -361,4 +366,62 @@ a[href="#main-content"]:focus, a[href="#main-content"]:active {
   top: -3px;
   text-decoration: underline;
   outline: none;
+}
+
+
+
+
+
+
+
+
+
+/******
+  Layouts
+******/
+body > footer {
+    background: #111;
+    color: #f3f3f3;
+    margin-block-start: 3em;
+}
+
+body > footer a,
+body > footer a:hover,
+body > footer a:focus {
+    color: #f3f3f3;
+}
+
+.footer-layout {
+    max-width: 55em;
+    margin-inline: auto;
+    padding: 2em;
+}
+
+.footer-links {
+    list-style-type: none;
+    padding-inline-start: 0;
+    margin-block: 3em 1em;
+    text-align: center;
+}
+
+.copyright-information {
+    text-align: center;
+    margin-block-end: 0;
+    padding-block-end: 2em;
+}
+
+@media screen and (min-width: 850px) {
+    .footer-layout {
+        display: flex;
+    }
+
+    .footer-layout .verse {
+        flex: 0 1 80%;
+    }
+
+    .footer-links {
+        flex: 1 0 20%;
+        margin-block-start: 0;
+        text-align: right;
+    }
 }
