@@ -345,16 +345,50 @@ span.optional {
     cursor: pointer;
     background: none;
     border: none;
+    padding: 0.25em;
+    width: 100%;
+    margin-block-end: 0.25em;
+}
+
+@media screen and (min-width: 350px) {
+    .pictures-layout {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.25em;
+    }
+
+    .thumbnail {
+        margin-block-end: 0;
+    }
+}
+
+@media screen and (min-width: 750px) {
+    .pictures-layout {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .pictures-layout {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
 
 .thumbnail img {
     width: 100%;
+    max-width: 100%;
+    height: auto;
 }
 
 #image-modal .modal__content {
     background: no-repeat center url('images/loader.svg');
     min-width: 200px;
     min-height: 300px;
+}
+
+#image-modal .modal__content img {
+    max-width: 100%;
+    height: auto;
 }
 
 /******
