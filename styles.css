@@ -97,6 +97,10 @@ body > header {
     color: #ffffff;
 }
 
+body > header img {
+    width: 100%;
+}
+
 @media screen and (min-width: 1200px) {
     body > header {
         height: 345px;
