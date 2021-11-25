@@ -17,6 +17,8 @@
 ******/
 body {
     font-size: 1.2em;
+    line-height: 1.6;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
 }
 
 main {
@@ -75,10 +77,17 @@ h2 {
 
 a {
     color: #0044dd;
+    text-decoration: none;
 }
 
-a:hover {
+a:hover,
+a:focus {
     color: #0000aa;
+    text-decoration: underline;
+}
+
+button {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
 }
 
 .button {
@@ -123,7 +132,7 @@ body > header img {
     width: 100%;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1210px) {
     body > header {
         height: 345px;
         overflow: hidden;
@@ -190,11 +199,12 @@ nav.main-menu a.brand img {
   
 nav.main-menu button {
     background-color: #111;
-    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(250, 250, 250, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(250, 250, 250, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
     background-repeat: no-repeat;
     background-position: center center;
     border: none;
     cursor: pointer;
+    font-size: inherit;
     width: 3em;
     height: 2em;
     align-self: center;
@@ -434,7 +444,8 @@ span.optional {
     padding: 0.5em 0.75em;
 }
 
-.translation-link:hover {
+.translation-link:hover,
+.translation-link:focus {
     color: white;
 }
 
