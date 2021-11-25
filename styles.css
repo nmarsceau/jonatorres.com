@@ -186,6 +186,11 @@ nav.main-menu a.brand {
     align-self: center;
     color: #fff;
     width: 8em;
+    margin-left: 1em;
+}
+
+nav.main-menu a.brand img {
+    width: 100%;
 }
   
 nav.main-menu button {
