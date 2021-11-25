@@ -105,6 +105,17 @@ blockquote cite {
     text-align: right;
 }
 
+.message {
+    border-radius: 7px;
+    padding: 0.75em 1.5em;
+    margin-block-end: 1em;
+    text-align: center;
+}
+
+.message.warning {
+    background-color: #ffd500;
+}
+
 /******
   2. Header
 ******/
