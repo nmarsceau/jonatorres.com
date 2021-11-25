@@ -24,7 +24,23 @@ main {
     max-width: 55em;
     margin-inline: auto;
     margin-block-start: 2em;
-    padding-inline: 2em;
+    padding-inline: 1em;
+}
+
+main.wide {
+    max-width: 70em;
+}
+
+@media screen and (min-width: 400px) {
+    main {
+        padding-inline: 1.5em;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    main {
+        padding-inline: 2em;
+    }
 }
 
 h1 {
@@ -35,7 +51,7 @@ h2 {
     font-weight: 400;
 }
 
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 610px) {
     h2 {
         font-size: 2.1em;
     }
@@ -404,6 +420,7 @@ span.optional {
     color: white;
     border-radius: 7px;
     white-space: nowrap;
+    padding: 0.5em 0.75em;
 }
 
 .translation-link:hover {
@@ -423,7 +440,7 @@ span.optional {
     display: block;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 500px) {
     .gods_story_heading_hack {
         display: none;
     }
@@ -603,4 +620,128 @@ body > footer a:focus {
     .order-form {
         flex: 0 1 45%;
     }
+}
+
+
+.homepage-layout article,
+.homepage-layout aside {
+    margin-block-end: 3em;
+}
+
+.homepage-content header h2 {
+    display: inline-block;
+}
+
+.homepage-content header .translation-link {
+    margin-inline-start: 0.5em;
+    vertical-align: super;
+}
+
+@media screen and (min-width: 1200px) {
+    .homepage-layout {
+        display: flex;
+        column-gap: 1.5em;
+        justify-content: space-between;
+    }
+
+    .homepage-content {
+        flex: 0 1 auto;
+    }
+
+    .homepage-sidebar {
+        flex: 0 0 285px;
+    }
+}
+
+
+
+
+.homepage-video-layout .layout-cell {
+    margin-block-end: 1em;
+}
+
+@media screen and (min-width: 650px) {
+    .homepage-video-layout {
+        display: flex;
+        gap: 1em;
+        flex-wrap: wrap;
+    }
+
+    .homepage-video-layout .layout-cell {
+        flex: 0 1 48%;
+        margin-block-end: 0;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .homepage-video-layout .layout-cell {
+        flex: 0 1 30%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .homepage-video-layout {
+        display: block;
+    }
+
+    .homepage-video-layout .layout-cell {
+        margin-block-end: 1em;
+    }
+}
+
+
+
+
+
+.homepage-picture {
+    display: block;
+    text-align: center;
+    padding-block: 0.75em;
+}
+
+.homepage-picture img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media screen and (min-width: 650px) {
+    .homepage-picture:not(.wide) {
+        padding-block: 0 0.75em;
+    }
+
+    .homepage-picture.right:not(.wide) {
+        float: right;
+        padding-inline-start: 1em;
+    }
+
+    .homepage-picture.left:not(.wide) {
+        float: left;
+        padding-inline-end: 1em;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .homepage-picture.wide {
+        padding-block: 0 0.75em;
+    }
+
+    .homepage-picture.right.wide {
+        float: right;
+        padding-inline-start: 1em;
+    }
+
+    .homepage-picture.left.wide {
+        float: left;
+        padding-inline-end: 1em;
+    }
+}
+
+
+
+.homepage-tract-layout {
+    display: flex;
+}
+
+.tract-links {
+    padding-inline-start: 0.5em;
 }
