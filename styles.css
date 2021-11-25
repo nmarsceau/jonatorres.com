@@ -1,64 +1,124 @@
-/* TABLE OF CONTENTS
+/* Table of Contents
 
-1. Global
-2. Header
-3. Navigation Bar
-4. Videos
-5. Forms
-6. Gallery
-7. Translation Links
-8. God's Story Heading Hack
-9. Skip to Main Content
-
+    0. Reset
+    1. Helpers
+    2. Layout
+        1. Header
+        2. Main Content
+        3. Footer
+        4. Homepage
+        5. Memories
+        6. Songs
+        7. Contact Us
+    3. Components
+        1. Headings
+        2. Links
+        3. Buttons
+        4. Quotes
+        5. Alert Messages
+        6. Videos
+        7. Translation Links
+        8. Skip to Main Content
+        9. Main Navigation
+        10. Forms
+        11. Gallery
 */
 
-/******
-  1. Global
-******/
+/* 0. Reset */
+* {
+    box-sizing: border-box;
+}
+
+html, body, div, span, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, details, figure, figcaption, footer, header,
+menu, nav, output, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, menu, nav, section {
+	display: block;
+}
+
 body {
-    font-size: 1.2em;
-    line-height: 1.6;
+	font-size: 1.2em;
+	line-height: 1.6;
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+}
+
+ol {
+	list-style-type: decimal;
+}
+
+ul {
+	list-style-type: disc;
+}
+
+ol, ul {
+	padding-left: 2em;
+}
+
+li {
+    padding-bottom: .5em;
+    line-height: 1.3em;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+blockquote, p {
+    margin: 0 0 1em;
+}
+
+button {
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
 }
 
-main {
-    min-height: 60vh;
-    max-width: 55em;
-    margin-inline: auto;
-    margin-block-start: 2em;
-    padding-inline: 1em;
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
-main.wide {
-    max-width: 70em;
+em {
+	font-style: italic;
 }
 
-@media screen and (min-width: 400px) {
-    main {
-        padding-inline: 1.5em;
-    }
+strong {
+    font-weight: bold;
 }
 
-@media screen and (min-width: 600px) {
-    main {
-        padding-inline: 2em;
-    }
+textarea {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
 }
 
-h1 {
-    font-size: 2.5em;
+small {
+    display: inline-block;
+    font-size: 0.8em;
+    line-height: 1.4;
 }
 
-h2 {
-    font-weight: 400;
-}
 
-@media screen and (min-width: 610px) {
-    h2 {
-        font-size: 2.1em;
-    }
-}
 
+/* 1. Helpers */
 .hidden-visually {
     position: absolute !important;
     height: 1px; width: 1px;
@@ -71,63 +131,21 @@ h2 {
     display: none;
 }
 
-.no-wrap {
-    white-space: nowrap;
-}
-
-a {
-    color: #0044dd;
-    text-decoration: none;
-}
-
-a:hover,
-a:focus {
-    color: #0000aa;
-    text-decoration: underline;
-}
-
-button {
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
-}
-
-.button {
-    font-size: 1.1em;
-    padding: 0.75em 3em;
-    border-radius: 5px;
-    border: none;
-    outline: 2px solid #888;
-    line-height: 1;
-}
-
-.button-success {
-    background: #28a745;
-    outline: none;
-    color: #fff;
-}
-
-.button-success:hover {
-    background: #218838;
-}
-
-blockquote cite {
+.gods_story_heading_hack {
     display: block;
-    text-align: right;
 }
 
-.message {
-    border-radius: 7px;
-    padding: 0.75em 1.5em;
-    margin-block-end: 1em;
-    text-align: center;
+@media screen and (min-width: 500px) {
+    .gods_story_heading_hack {
+        display: none;
+    }
 }
 
-.message.warning {
-    background-color: #ffd500;
-}
 
-/******
-  2. Header
-******/
+
+/* 2. Layout */
+
+/* 2.1 Header */
 body > header img {
     width: 100%;
 }
@@ -163,9 +181,389 @@ body > header img {
     }
 }
 
-/******
-  3. Navigation Bar
-******/
+/* 2.2 Main Content */
+main {
+    min-height: 60vh;
+    max-width: 55em;
+    margin-inline: auto;
+    margin-block-start: 2em;
+    padding-inline: 1em;
+}
+
+main.wide {
+    max-width: 70em;
+}
+
+@media screen and (min-width: 400px) {
+    main {
+        padding-inline: 1.5em;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    main {
+        padding-inline: 2em;
+    }
+}
+
+/* 2.3 Footer */
+body > footer {
+    background: #111;
+    color: #f3f3f3;
+    margin-block-start: 3em;
+}
+
+body > footer a,
+body > footer a:hover,
+body > footer a:focus {
+    color: #f3f3f3;
+}
+
+.footer-layout {
+    max-width: 55em;
+    margin-inline: auto;
+    padding: 2em;
+}
+
+.footer-links {
+    list-style-type: none;
+    padding-inline-start: 0;
+    margin-block: 3em 1em;
+    text-align: center;
+}
+
+.copyright-information {
+    text-align: center;
+    margin-block-end: 0;
+    padding-block-end: 2em;
+}
+
+@media screen and (min-width: 850px) {
+    .footer-layout {
+        display: flex;
+    }
+
+    .footer-layout .verse {
+        flex: 0 1 80%;
+    }
+
+    .footer-links {
+        flex: 1 0 20%;
+        margin-block-start: 0;
+        text-align: right;
+    }
+}
+
+/* 2.4 Homepage */
+.homepage-layout article,
+.homepage-layout aside {
+    margin-block-end: 3em;
+}
+
+.homepage-content header h2 {
+    display: inline-block;
+}
+
+.homepage-content header .translation-link {
+    margin-inline-start: 0.5em;
+    vertical-align: super;
+}
+
+@media screen and (min-width: 1200px) {
+    .homepage-layout {
+        display: flex;
+        column-gap: 1.5em;
+        justify-content: space-between;
+    }
+
+    .homepage-content {
+        flex: 0 1 auto;
+    }
+
+    .homepage-sidebar {
+        flex: 0 0 285px;
+    }
+}
+
+.homepage-video-layout .layout-cell {
+    margin-block-end: 1em;
+}
+
+@media screen and (min-width: 650px) {
+    .homepage-video-layout {
+        display: flex;
+        gap: 1em;
+        flex-wrap: wrap;
+    }
+
+    .homepage-video-layout .layout-cell {
+        flex: 0 1 48%;
+        margin-block-end: 0;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .homepage-video-layout .layout-cell {
+        flex: 0 1 30%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .homepage-video-layout {
+        display: block;
+    }
+
+    .homepage-video-layout .layout-cell {
+        margin-block-end: 1em;
+    }
+}
+
+.homepage-picture {
+    display: block;
+    text-align: center;
+    padding-block: 0.75em;
+}
+
+.homepage-picture img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media screen and (min-width: 650px) {
+    .homepage-picture:not(.wide) {
+        padding-block: 0 0.75em;
+    }
+
+    .homepage-picture.right:not(.wide) {
+        float: right;
+        padding-inline-start: 1em;
+    }
+
+    .homepage-picture.left:not(.wide) {
+        float: left;
+        padding-inline-end: 1em;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .homepage-picture.wide {
+        padding-block: 0 0.75em;
+    }
+
+    .homepage-picture.right.wide {
+        float: right;
+        padding-inline-start: 1em;
+    }
+
+    .homepage-picture.left.wide {
+        float: left;
+        padding-inline-end: 1em;
+    }
+}
+
+.homepage-tract-layout {
+    display: flex;
+}
+
+.tract-links {
+    padding-inline-start: 0.5em;
+}
+
+/* 2.5 Memories */
+.memories-list {
+    padding-block-start: 2em;
+}
+
+@media screen and (min-width: 750px) {
+    .memories-layout {
+        display: flex;
+        gap: 2em;
+    }
+
+    .memories-list {
+        flex: 0 1 60%;
+        padding-block-start: 3em;
+    }
+
+    .memory-form {
+        flex: 1 0 300px;
+    }
+}
+
+/* 2.6 Songs */
+.songs-layout article {
+    margin-block-start: 3em;
+}
+
+@media screen and (min-width: 990px) {
+    .songs-layout {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .songs-layout article {
+        flex: 0 0 auto;
+    }
+}
+
+/* 2.7 Contact Us */
+.email-form,
+.order-form {
+    margin-top: 3em;
+}
+
+.quantity-description {
+    margin-inline-start: 0.5em;
+    margin-block: -0.25em 0;
+}
+
+@media screen and (min-width: 850px) {
+    .contact-layout {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .email-form {
+        flex: 0 1 45%;
+    }
+
+    .order-form {
+        flex: 0 1 45%;
+    }
+}
+
+
+
+/* 3. Components */
+
+/* 3.1 Headings */
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+@media screen and (min-width: 610px) {
+    h2 {
+        font-size: 2.1em;
+    }
+}
+
+/* 3.2 Links */
+a {
+    color: #0044dd;
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    color: #0000aa;
+    text-decoration: underline;
+}
+
+/* 3.3 Buttons */
+.button {
+    font-size: 1.1em;
+    padding: 0.75em 3em;
+    border-radius: 5px;
+    border: none;
+    outline: 2px solid #888;
+    line-height: 1;
+}
+
+.button-success {
+    background: #28a745;
+    outline: none;
+    color: #fff;
+}
+
+.button-success:hover {
+    background: #218838;
+}
+
+/* 3.4 Quotes */
+blockquote cite {
+    display: block;
+    text-align: right;
+}
+
+/* 3.5 Alert Messages */
+.message {
+    border-radius: 7px;
+    padding: 0.75em 1.5em;
+    margin-block-end: 1em;
+    text-align: center;
+}
+
+.message.warning {
+    background-color: #ffd500;
+}
+
+/* 3.6 Videos */
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+}
+
+.video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* 3.7 Translation Links */
+.translation-link {
+    font-size: 0.6em;
+    background-color: #000000;
+    color: white;
+    border-radius: 7px;
+    white-space: nowrap;
+    padding: 0.5em 0.75em;
+}
+
+.translation-link:hover,
+.translation-link:focus {
+    color: white;
+}
+
+@media screen and (min-width: 768px) {
+    .translation-link {
+        font-size: 0.75em;
+    }
+}
+
+/* 3.8 Skip to Main Content */
+#main-content {
+    position: relative;
+    top: -4.5em;
+}
+  
+a[href="#main-content"] {
+    z-index: 999;
+    position: fixed;
+    top: -100px;
+    padding: 0.5em 1em 0.75em;
+    left: 30px;
+    border-radius: 0px 0px 10px 10px;
+    background-color: #fff;
+    color: #000;
+    border: 3px solid #000;
+}
+  
+a[href="#main-content"]:focus, a[href="#main-content"]:active {
+    top: -3px;
+    text-decoration: underline;
+    outline: none;
+}
+
+/* 3.9 Main Navigation */
 nav.main-menu {
     position: sticky;
     top: 0;
@@ -306,27 +704,7 @@ nav.main-menu ul li a:active {
     }
 }
 
-/******
-  4. Videos
-******/
-.video-container {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-bottom: 56.25%;
-}
-
-.video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-/******
-  5. Forms
-******/
+/* 3.10 Forms */
 form input[type="text"],
 form input[type="email"],
 form input[type="number"],
@@ -335,9 +713,11 @@ form textarea {
     padding: 0.5em 0.75em;
     border-radius: 5px;
     border: 1px solid darkgray;
+    font-size: 1rem;
 }
 
 form textarea {
+    font-size: 1rem;
     margin-block-end: -0.4em;
 }
 
@@ -347,6 +727,10 @@ form textarea {
 
 form label {
     margin-block-end: 0;
+}
+
+form label:not(.radio-container label) {
+    display: block;
 }
 
 form label:not(:first-of-type):not(.radio-container label),
@@ -379,9 +763,7 @@ span.optional {
   margin-left: 10px;
 }
 
-/******
-  6. Gallery
-******/
+/* 3.11 Gallery */
 .thumbnail {
     cursor: pointer;
     background: none;
@@ -430,339 +812,4 @@ span.optional {
 #image-modal .modal__content img {
     max-width: 100%;
     height: auto;
-}
-
-/******
-  7. Translation Links
-******/
-.translation-link {
-    font-size: 0.6em;
-    background-color: #000000;
-    color: white;
-    border-radius: 7px;
-    white-space: nowrap;
-    padding: 0.5em 0.75em;
-}
-
-.translation-link:hover,
-.translation-link:focus {
-    color: white;
-}
-
-@media screen and (min-width: 768px) {
-    .translation-link {
-        font-size: 0.75em;
-    }
-}
-
-/******
-  8. God's Story Heading Hack
-******/
-.gods_story_heading_hack {
-    display: block;
-}
-
-@media screen and (min-width: 500px) {
-    .gods_story_heading_hack {
-        display: none;
-    }
-}
-
-/******
-  9. Skip to Main Content
-******/
-#main-content {
-  position: relative;
-  top: -4.5em;
-}
-
-a[href="#main-content"] {
-  z-index: 999;
-  position: fixed;
-  top: -100px;
-  padding: 0.5em 1em 0.75em;
-  left: 30px;
-  border-radius: 0px 0px 10px 10px;
-  background-color: #fff;
-  color: #000;
-  border: 3px solid #000;
-}
-
-a[href="#main-content"]:focus, a[href="#main-content"]:active {
-  top: -3px;
-  text-decoration: underline;
-  outline: none;
-}
-
-
-
-
-
-
-
-
-
-/******
-  Layouts
-******/
-body > footer {
-    background: #111;
-    color: #f3f3f3;
-    margin-block-start: 3em;
-}
-
-body > footer a,
-body > footer a:hover,
-body > footer a:focus {
-    color: #f3f3f3;
-}
-
-.footer-layout {
-    max-width: 55em;
-    margin-inline: auto;
-    padding: 2em;
-}
-
-.footer-links {
-    list-style-type: none;
-    padding-inline-start: 0;
-    margin-block: 3em 1em;
-    text-align: center;
-}
-
-.copyright-information {
-    text-align: center;
-    margin-block-end: 0;
-    padding-block-end: 2em;
-}
-
-@media screen and (min-width: 850px) {
-    .footer-layout {
-        display: flex;
-    }
-
-    .footer-layout .verse {
-        flex: 0 1 80%;
-    }
-
-    .footer-links {
-        flex: 1 0 20%;
-        margin-block-start: 0;
-        text-align: right;
-    }
-}
-
-
-
-
-
-
-.songs-layout article {
-    flex: 0 0 auto;
-    margin-block-start: 3em;
-}
-
-@media screen and (min-width: 550px) {
-    .songs-layout article {
-        margin-inline-start: 2em;
-    }
-}
-
-@media screen and (min-width: 990px) {
-    .songs-layout {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .songs-layout article {
-        margin-inline-start: 0;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-.memories-list {
-    padding-block-start: 2em;
-}
-
-@media screen and (min-width: 750px) {
-    .memories-layout {
-        display: flex;
-        gap: 2em;
-    }
-
-    .memories-list {
-        flex: 0 1 60%;
-        padding-block-start: 3em;
-    }
-
-    .memory-form {
-        flex: 1 0 300px;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-.email-form,
-.order-form {
-    margin-top: 3em;
-}
-
-.quantity-description {
-    margin-inline-start: 0.5em;
-    margin-block: -0.25em 0;
-}
-
-@media screen and (min-width: 850px) {
-    .contact-layout {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .email-form {
-        flex: 0 1 45%;
-    }
-
-    .order-form {
-        flex: 0 1 45%;
-    }
-}
-
-
-.homepage-layout article,
-.homepage-layout aside {
-    margin-block-end: 3em;
-}
-
-.homepage-content header h2 {
-    display: inline-block;
-}
-
-.homepage-content header .translation-link {
-    margin-inline-start: 0.5em;
-    vertical-align: super;
-}
-
-@media screen and (min-width: 1200px) {
-    .homepage-layout {
-        display: flex;
-        column-gap: 1.5em;
-        justify-content: space-between;
-    }
-
-    .homepage-content {
-        flex: 0 1 auto;
-    }
-
-    .homepage-sidebar {
-        flex: 0 0 285px;
-    }
-}
-
-
-
-
-.homepage-video-layout .layout-cell {
-    margin-block-end: 1em;
-}
-
-@media screen and (min-width: 650px) {
-    .homepage-video-layout {
-        display: flex;
-        gap: 1em;
-        flex-wrap: wrap;
-    }
-
-    .homepage-video-layout .layout-cell {
-        flex: 0 1 48%;
-        margin-block-end: 0;
-    }
-}
-
-@media screen and (min-width: 960px) {
-    .homepage-video-layout .layout-cell {
-        flex: 0 1 30%;
-    }
-}
-
-@media screen and (min-width: 1200px) {
-    .homepage-video-layout {
-        display: block;
-    }
-
-    .homepage-video-layout .layout-cell {
-        margin-block-end: 1em;
-    }
-}
-
-
-
-
-
-.homepage-picture {
-    display: block;
-    text-align: center;
-    padding-block: 0.75em;
-}
-
-.homepage-picture img {
-    max-width: 100%;
-    height: auto;
-}
-
-@media screen and (min-width: 650px) {
-    .homepage-picture:not(.wide) {
-        padding-block: 0 0.75em;
-    }
-
-    .homepage-picture.right:not(.wide) {
-        float: right;
-        padding-inline-start: 1em;
-    }
-
-    .homepage-picture.left:not(.wide) {
-        float: left;
-        padding-inline-end: 1em;
-    }
-}
-
-@media screen and (min-width: 800px) {
-    .homepage-picture.wide {
-        padding-block: 0 0.75em;
-    }
-
-    .homepage-picture.right.wide {
-        float: right;
-        padding-inline-start: 1em;
-    }
-
-    .homepage-picture.left.wide {
-        float: left;
-        padding-inline-end: 1em;
-    }
-}
-
-
-
-.homepage-tract-layout {
-    display: flex;
-}
-
-.tract-links {
-    padding-inline-start: 0.5em;
 }
