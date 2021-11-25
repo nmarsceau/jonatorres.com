@@ -1,24 +1,22 @@
 <!doctype html>
 <html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="title" content="Contact Us - Jonatan Torres" />
-    <meta name="description" content="Contact us with any questions you have or to order Jona Torres tracts." />
-    <meta name="keyword" content="jona torres, jonatan torres, contact, order tracts" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="Contact Us - Jonatan Torres">
+    <meta name="description" content="Contact us with any questions you have or to order Jona Torres tracts.">
+    <meta name="keyword" content="jona torres, jonatan torres, contact, order tracts">
     <title>Contact Us | Jonatan Torres</title>
-    <link href="reset.css" rel="stylesheet" type="text/css" />
-    <link href="bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="styles.css" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link href="styles.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="images/favicon.ico">
 </head>
 <body>
     <a href="#main-content">Skip to main content</a>
-    <nav class="main-menu shadow">
-        <a class="brand ml-3" href="index.html">
+    <nav class="main-menu">
+        <a class="brand" href="index.html">
             <picture>
-                <source srcset="images/brand.webp" type="image/webp" />
-                <img src="images/brand.png" type="image/png" alt="" class="w-100" />
+                <source srcset="images/brand.webp" type="image/webp">
+                <img src="images/brand.png" type="image/png" alt="Jona Torres">
             </picture>
         </a>
         <button id="main-menu-toggle" type="button" aria-label="Toggle main menu"></button>
@@ -32,29 +30,30 @@
     </nav>
     <header>
         <picture>
-            <source type="image/webp" media="(max-width: 576px)" srcset="images/banner/xs.webp" />
-            <source type="image/webp" media="(max-width: 768px)" srcset="images/banner/sm.webp" />
-            <source type="image/webp" media="(max-width: 992px)" srcset="images/banner/md.webp" />
-            <source type="image/webp" media="(max-width: 1200px)" srcset="images/banner/lg.webp" />
-            <source type="image/webp" media="(min-width: 1200px)" srcset="images/banner/xl.webp" />
-            <source type="image/jpeg" media="(max-width: 576px)" srcset="images/banner/xs.jpg" />
-            <source type="image/jpeg" media="(max-width: 768px)" srcset="images/banner/sm.jpg" />
-            <source type="image/jpeg" media="(max-width: 992px)" srcset="images/banner/md.jpg" />
-            <source type="image/jpeg" media="(max-width: 1200px)" srcset="images/banner/lg.jpg" />
-            <source type="image/jpeg" media="(min-width: 1200px)" srcset="images/banner/xl.jpg" />
-            <img type="image/jpeg" src="images/banner/lg.jpg" alt="" class="w-100" />
+            <source type="image/webp" media="(max-width: 576px)" srcset="images/banner/xs.webp">
+            <source type="image/webp" media="(max-width: 768px)" srcset="images/banner/sm.webp">
+            <source type="image/webp" media="(max-width: 992px)" srcset="images/banner/md.webp">
+            <source type="image/webp" media="(max-width: 1210px)" srcset="images/banner/lg.webp">
+            <source type="image/webp" media="(min-width: 1210px)" srcset="images/banner/xl.webp">
+            <source type="image/jpeg" media="(max-width: 576px)" srcset="images/banner/xs.jpg">
+            <source type="image/jpeg" media="(max-width: 768px)" srcset="images/banner/sm.jpg">
+            <source type="image/jpeg" media="(max-width: 992px)" srcset="images/banner/md.jpg">
+            <source type="image/jpeg" media="(max-width: 1210px)" srcset="images/banner/lg.jpg">
+            <source type="image/jpeg" media="(min-width: 1210px)" srcset="images/banner/xl.jpg">
+            <img type="image/jpeg" src="images/banner/lg.jpg" alt="">
         </picture>
     </header>
-    <main class="container pt-4">
+    <main>
         <noscript>
-        <div class="alert alert-warning text-center" role="alert">
-            It looks like JavaScript is disabled in your browser. This website may not work properly until JavaScript is enabled.
+        <div class="message warning" role="alert">
+            It looks like JavaScript is disabled in your browser.<br>
+            This website may not work properly until JavaScript is enabled.
         </div>
         </noscript>
-        <section class="row pt-4">
-            <h1 class="col-12">Contact Us</h1>
-            <section class="col-md-5 mt-5">
-                <span id="main-content" tabindex="-1"></span>
+        <h1>Contact Us</h1>
+        <span id="main-content" tabindex="-1"></span>
+        <div class="contact-layout">
+            <section class="email-form">
                 <h2>Email Us</h2>
                 <p>
                     <small>
@@ -63,114 +62,55 @@
                     </small>
                 </p>
                 <form class="validate" name="email" method="post" netlify>
-                    <div class="row mb-3">
-                        <div class="col">
-                            <label class="d-block">
-                                Your Name<span class="required">required</span>
-                                <input type="text" name="name" class="form-control form-control-lg"
-                                    required maxlength="250">
-                            </label>
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col">
-                            <label class="d-block">
-                                Your Email Address<span class="optional">optional</span>
-                                <input type="email" name="email" class="form-control form-control-lg"
-                                    maxlength="320">
-                            </label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <label class="d-block">
-                              Your Message<span class="required">required</span>
-                              <textarea name="message" rows="6" class="form-control form-control-lg count" maxlength="2500" required></textarea>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="row mt-4">
-                        <div class="col">
-                            <button type="submit" class="btn btn-lg btn-success px-5">Send</button>
-                        </div>
-                    </div>
+                    <label for="email-name">Your Name<span class="required">required</span></label>
+                    <input type="text" id="email-name" name="name" required maxlength="250">
+                    <label for="email-email">Your Email Address<span class="optional">optional</span></label>
+                    <input type="email" id="email-email" name="email" maxlength="320">
+                    <label for="email-message">Your Message<span class="required">required</span></label>
+                    <textarea id="email-message" name="message" class="count" rows="6" maxlength="2500" required></textarea>
+                    <button type="submit" class="button button-success">Send</button>
                 </form>
             </section>
-            <section class="col-md-5 offset-md-2 mt-5">
+            <section class="order-form">
                 <h2>Order Tracts</h2>
                 <form class="validate" name="order" method="post" netlify>
-                    <div class="row mb-3">
-                        <div class="col">
-                            <label class="d-block">
-                                Your Name<span class="required">required</span>
-                                <input type="text" name="name" class="form-control form-control-lg"
-                                    required maxlength="250">
-                            </label>
-                        </div>
+                    <label for="order-name">Your Name<span class="required">required</span></label>
+                    <input type="text" id="order-name" name="name" required maxlength="250">
+                    <label for="order-email">Your Email Address<span class="required">required</span></label>
+                    <input type="email" id="order-email" name="email" required maxlength="320">
+                    <label>Tract Language<span class="required">required</span></label>
+                    <div class="radio-container inline">
+                        <input type="radio" id="order-language-english" name="language" value="English" required>
+                        <label for="order-language-english"><small>English</small></label>
+                        <input type="radio" id="order-language-espanol" name="language" value="Español" required>
+                        <label for="order-language-espanol"><small>Español</small></label>
                     </div>
-                    <div class="row mb-3">
-                        <div class="col">
-                            <label class="d-block">
-                                Your Email Address<span class="required">required</span>
-                                <input type="email" name="email" class="form-control form-control-lg"
-                                    required maxlength="320">
-                            </label>
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col">
-                            <label class="d-block">Tract Language<span class="required">required</span></label>
-                            <label class="form-check form-check-inline">
-                                <input type="radio" name="language" value="English" class="form-check-input" required>
-                                <small class="form-check-label">English</small>
-                            </label>
-                            <label class="form-check form-check-inline">
-                                <input type="radio" name="language" value="Español" class="form-check-input" required>
-                                <small class="form-check-label">Español</small>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col">
-                            <label class="d-block">
-                                Quantity<span class="required">required</span>
-                                <p class="ml-2"><small><em>50 tracts are $3.50, 100 tracts are $7.00.<br>Payment will be arranged after your order is received.</em></small></p>
-                                <input type="number" name="quantity" class="form-control form-control-lg"
-                                    required min="0" step="50">
-                            </label>
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col">
-                            <label class="d-block">Shipping Address<span class="required">required</span></label>
-                            <textarea name="address" rows="2" class="form-control form-control-lg count" maxlength="500" required></textarea>
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col">
-                            <button type="submit" class="btn btn-lg btn-success px-5">Submit</button>
-                        </div>
-                    </div>
+                    <label for="order-quantity">Quantity<span class="required">required</span></label>
+                    <p class="quantity-description"><small><em>50 tracts are $3.50, 100 tracts are $7.00.<br>Payment will be arranged after your order is received.</em></small></p>
+                    <input type="number" id="order-quantity" name="quantity" required min="0" step="50">
+                    <label for="order-address">Shipping Address<span class="required">required</span></label>
+                    <textarea id="order-address" name="address" rows="2" class="count" maxlength="500" required></textarea>
+                    <button type="submit" class="button button-success">Submit</button>
                 </form>
             </section>
-        </section>
+        </div>
     </main>
-    <footer class="bg-dark text-light mt-5 p-4">
-        <div class="container">
-            <div class="row">
-                <blockquote class="col-sm-8 font-italic">
+    <footer>
+        <div class="footer-layout">
+            <blockquote class="verse">
+                <em>
                     &ldquo;I waited patiently for the LORD; and he inclined unto me, and heard my cry. He brought me up also out of a horrible pit, out of the miry clay, and set my feet upon a rock,
                     and established my goings. And he has put a new song in my mouth, even praise unto our God: many shall see it, and fear, and shall trust in the LORD. Blessed is that man that makes the LORD his trust.&rdquo;
-                    <cite class="d-block text-right mt-1">&ndash; Psalm 40:1-4</cite>
-                </blockquote>
-                <div class="col-sm-4 mt-5 mt-sm-0 text-center text-sm-right">
-                    <a href="contact.html" class="text-white">Contact Us</a>
-                </div>
-                <div class="col-12 mt-5 text-center text-sm-left">
-                    &copy;&nbsp;2012-<span id="copyright-current-year">2021</span>. All Rights Reserved.
-                </div>
-            </div>
+                    <cite>&ndash; Psalm 40:1-4</cite>
+                </em>
+            </blockquote>
+            <ul class="footer-links">
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
         </div>
+        <p class="copyright-information">
+            &copy;&nbsp;2012-<span id="copyright-current-year">2021</span>. All Rights Reserved.
+        </p>
     </footer>
     <script src="main.js"></script>
     <script src="validate_form.js"></script>

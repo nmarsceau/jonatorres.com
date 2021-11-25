@@ -1,26 +1,24 @@
 <!doctype html>
 <html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="title" content="Pictures - Jonatan Torres" />
-    <meta name="description" content="View pictures of Jona Torres and his family." />
-    <meta name="keyword" content="jona torres, jonatan torres, pictures" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="Pictures - Jonatan Torres">
+    <meta name="description" content="View pictures of Jona Torres and his family.">
+    <meta name="keyword" content="jona torres, jonatan torres, pictures">
     <title>Pictures | Jonatan Torres</title>
-    <link href="reset.css" rel="stylesheet" type="text/css" />
-    <link href="bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="styles.css" rel="stylesheet" type="text/css" />
-    <link href="micromodal.css" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" href="images/favicon.ico" />
-    <link rel="preload" href="images/loader.svg" as="image" />
+    <link href="styles.css" rel="stylesheet" type="text/css">
+    <link href="micromodal.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="preload" href="images/loader.svg" as="image">
 </head>
 <body>
     <a href="#main-content">Skip to main content</a>
-    <nav class="main-menu shadow">
-        <a class="brand ml-3" href="index.html">
+    <nav class="main-menu">
+        <a class="brand" href="index.html">
             <picture>
-                <source srcset="images/brand.webp" type="image/webp" />
-                <img src="images/brand.png" type="image/png" alt="" class="w-100" />
+                <source srcset="images/brand.webp" type="image/webp">
+                <img src="images/brand.png" type="image/png" alt="Jona Torres">
             </picture>
         </a>
         <button id="main-menu-toggle" type="button" aria-label="Toggle main menu"></button>
@@ -34,46 +32,46 @@
     </nav>
     <header>
         <picture>
-            <source type="image/webp" media="(max-width: 576px)" srcset="images/banner/xs.webp" />
-            <source type="image/webp" media="(max-width: 768px)" srcset="images/banner/sm.webp" />
-            <source type="image/webp" media="(max-width: 992px)" srcset="images/banner/md.webp" />
-            <source type="image/webp" media="(max-width: 1200px)" srcset="images/banner/lg.webp" />
-            <source type="image/webp" media="(min-width: 1200px)" srcset="images/banner/xl.webp" />
-            <source type="image/jpeg" media="(max-width: 576px)" srcset="images/banner/xs.jpg" />
-            <source type="image/jpeg" media="(max-width: 768px)" srcset="images/banner/sm.jpg" />
-            <source type="image/jpeg" media="(max-width: 992px)" srcset="images/banner/md.jpg" />
-            <source type="image/jpeg" media="(max-width: 1200px)" srcset="images/banner/lg.jpg" />
-            <source type="image/jpeg" media="(min-width: 1200px)" srcset="images/banner/xl.jpg" />
-            <img type="image/jpeg" src="images/banner/lg.jpg" alt="" class="w-100" />
+            <source type="image/webp" media="(max-width: 576px)" srcset="images/banner/xs.webp">
+            <source type="image/webp" media="(max-width: 768px)" srcset="images/banner/sm.webp">
+            <source type="image/webp" media="(max-width: 992px)" srcset="images/banner/md.webp">
+            <source type="image/webp" media="(max-width: 1210px)" srcset="images/banner/lg.webp">
+            <source type="image/webp" media="(min-width: 1210px)" srcset="images/banner/xl.webp">
+            <source type="image/jpeg" media="(max-width: 576px)" srcset="images/banner/xs.jpg">
+            <source type="image/jpeg" media="(max-width: 768px)" srcset="images/banner/sm.jpg">
+            <source type="image/jpeg" media="(max-width: 992px)" srcset="images/banner/md.jpg">
+            <source type="image/jpeg" media="(max-width: 1210px)" srcset="images/banner/lg.jpg">
+            <source type="image/jpeg" media="(min-width: 1210px)" srcset="images/banner/xl.jpg">
+            <img type="image/jpeg" src="images/banner/lg.jpg" alt="">
         </picture>
     </header>
-    <main class="container pt-4">
+    <main>
         <noscript>
-            <div class="alert alert-warning text-center" role="alert">
-                It looks like JavaScript is disabled in your browser. The picture gallery will not work properly until JavaScript is enabled.
+            <div class="message warning" role="alert">
+                It looks like JavaScript is disabled in your browser.<br>
+                The picture gallery will not work properly until JavaScript is enabled.
             </div>
         </noscript>
-        <section class="row pt-4" id="thumbnail-container">
-            <h1 class="col-12">Pictures</h1>
-            <span id="main-content" tabindex="-1"></span>
-        </section>
+        <h1>Pictures</h1>
+        <span id="main-content" tabindex="-1"></span>
+        <section id="thumbnail-container" class="pictures-layout"></section>
     </main>
-    <footer class="bg-dark text-light mt-5 p-4">
-        <div class="container">
-            <div class="row">
-                <blockquote class="col-sm-8 font-italic">
+    <footer>
+        <div class="footer-layout">
+            <blockquote class="verse">
+                <em>
                     &ldquo;I waited patiently for the LORD; and he inclined unto me, and heard my cry. He brought me up also out of a horrible pit, out of the miry clay, and set my feet upon a rock,
                     and established my goings. And he has put a new song in my mouth, even praise unto our God: many shall see it, and fear, and shall trust in the LORD. Blessed is that man that makes the LORD his trust.&rdquo;
-                    <cite class="d-block text-right mt-1">&ndash; Psalm 40:1-4</cite>
-                </blockquote>
-                <div class="col-sm-4 mt-5 mt-sm-0 text-center text-sm-right">
-                    <a href="contact.html" class="text-white">Contact Us</a>
-                </div>
-                <div class="col-12 mt-5 text-center text-sm-left">
-                    &copy;&nbsp;2012-<span id="copyright-current-year">2021</span>. All Rights Reserved.
-                </div>
-            </div>
+                    <cite>&ndash; Psalm 40:1-4</cite>
+                </em>
+            </blockquote>
+            <ul class="footer-links">
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
         </div>
+        <p class="copyright-information">
+            &copy;&nbsp;2012-<span id="copyright-current-year">2021</span>. All Rights Reserved.
+        </p>
     </footer>
     <div id="image-modal" class="modal micromodal-slide" aria-hidden="true">
         <div class="modal__overlay" tabindex="-1" data-micromodal-close>
@@ -267,7 +265,6 @@
                 picture.appendChild(webp);
                 const image = document.createElement('img');
                 image.type = 'image/jpeg';
-                image.classList.add('img-fluid');
                 image.src = 'images/gallery/fullsize/' + image_number + '.jpg';
                 image.alt = pictures_config.alt[image_number - 1];
                 picture.appendChild(image);
@@ -328,17 +325,12 @@
             image.type = 'image/jpeg';
             image.alt = pictures_config.alt[i];
             image.loading = 'lazy';
-            image.classList.add('img-fluid');
             image.width = 300;
             image.height = 150;
             image.style.width = 300;
             image.style.height = 150;
             thumbnail.appendChild(image);
             const thumbnail_button = document.createElement('button');
-            thumbnail_button.classList.add('col-6');
-            thumbnail_button.classList.add('col-md-4');
-            thumbnail_button.classList.add('col-lg-3');
-            thumbnail_button.classList.add('p-2');
             thumbnail_button.classList.add('thumbnail');
             thumbnail_button.appendChild(thumbnail);
             thumbnail_button.addEventListener('click', function(event) {
@@ -346,7 +338,7 @@
                 load_image();
                 toggle_modal_nav_buttons();
                 MicroModal.show('image-modal', {awaitCloseAnimation: true});
-            })
+            });
             thumbnail_container.appendChild(thumbnail_button);
         }
         image_modal.querySelector('button.image-modal-nav.previous').addEventListener('click', previous_image);
